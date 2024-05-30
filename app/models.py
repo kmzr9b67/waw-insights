@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, Float
-from database import *
+from app.database import *
 
 class InfoWaw(Base):
     __tablename__ = "info"

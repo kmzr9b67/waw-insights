@@ -1,8 +1,10 @@
-from models import *
-from fastapi import *
-from creds import *
+
 import requests
 import uvicorn
+from fastapi import FastAPI
+from app.creds import API_KEY
+from app.database import Base, engine, l_session
+from app.models import InfoWaw
 
 URL_AIR_QL = (f'https://api.um.warszawa.pl/api/action/air_sensors_get/?apikey={API_KEY}')
 
