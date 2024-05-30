@@ -1,5 +1,4 @@
 /.venv/
 app/creds.py
 pomysl.txt
-data/Data.csv
 .idea/
