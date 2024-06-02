@@ -1,6 +1,4 @@
-from json import loads, dumps
 import pandas as pd
-import requests
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from pandas import read_csv
@@ -36,6 +34,6 @@ async def get_data_db_info(district: str):
                                  f'Please select from the list{data['District_name'].tolist()}')
 
 
-if __name__ == "__main__":
-    uvicorn.run("app.main:app", reload=True)
+# if __name__ == "__main__":
+#     uvicorn.run("app.main:app", reload=True)
 
