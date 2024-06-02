@@ -1,12 +1,11 @@
-FROM python:3.11-slim
+FROM python:3.9
 
-# Step 2. Copy local code to the container image.
-ENV APP_HOME /app
-WORKDIR $APP_HOME
-COPY . $APP_HOME
+WORKDIR /code
 
-# Step 3. Install production dependencies.
-RUN pip install -r requirements.txt
+COPY ./requirements.txt /code/requirements.txt
 
-# Step 4: Run the web service on container startup using gunicorn webserver.
-CMD exec gunicorn --bind :$PORT --workers 1 --worker-class uvicorn.workers.UvicornWorker --timeout 0 --threads 8 main:app
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+COPY ./app /code/app
+
+CMD ["fastapi", "run", "app/main.py", "--proxy-headers", "--port", "8080"]
