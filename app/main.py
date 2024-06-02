@@ -31,7 +31,7 @@ async def get_data_db_info(district: str):
         return data.loc[district.title()].to_dict()
     except KeyError:
         raise HTTPException(404, f'There is no information about such a district.'
-                                 f'Please select from the list{data['District_name'].tolist()}')
+                                 f'Please select from the list{data["District_name"].tolist()}')
 
 
 # if __name__ == "__main__":
