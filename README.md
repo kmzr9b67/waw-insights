@@ -1,4 +1,4 @@
-# Warsaw Housing Statistics API
+# Warsaw Insights API
 
 This application is built with **FastAPI** and provides key statistics about housing prices and information about individual districts in Warsaw. 
 It is containerized using **Docker** and deployed on **Google Cloud Run** to ensure scalability, reliability, and ease of access.
